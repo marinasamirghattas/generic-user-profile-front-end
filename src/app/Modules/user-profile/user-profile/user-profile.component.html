@@ -1,0 +1,63 @@
+<mat-card class="user-profile-card" >
+  <form class="example-form"  [formGroup]="userProfileForm">
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input type="text" matInput formControlName="firstNameFormControl" [errorStateMatcher]="matcher" placeholder="Marina">
+      <mat-error *ngIf="userProfileForm.controls['firstNameFormControl'].hasError('required')">
+        User Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input type="text" matInput formControlName="lastNameFormControl" [errorStateMatcher]="matcher"
+        placeholder="Ghattas">
+      <mat-error *ngIf="userProfileForm.controls['lastNameFormControl'].hasError('required')">
+        User Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Age</mat-label>
+      <input type="number" matInput formControlName="ageFormControl" [errorStateMatcher]="matcher"
+        placeholder="00">
+      <mat-error *ngIf="userProfileForm.controls['ageFormControl'].hasError('required')">
+        Full Name is <strong>required</strong>
+      </mat-error>
+      <mat-error
+        *ngIf="userProfileForm.controls['ageFormControl'].hasError('min')&& !userProfileForm.controls['ageFormControl'].hasError('required')">
+        Full Name must be letters only
+      </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Country Of Birth</mat-label>
+      <input type="text"
+             placeholder="Pick one"
+             aria-label="Number"
+             matInput
+             formControlName="counryOfBirthFormControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Address</mat-label>
+        <input type="text" matInput formControlName="addressFormControl" [errorStateMatcher]="matcher"
+          placeholder="5 Zena st. Seyof Bahary">
+        <mat-error *ngIf="userProfileForm.controls['addressFormControl'].hasError('required')">
+         Address is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      
+
+      <button mat-raised-button type="button" color="primary" [disabled]="!userProfileForm.valid" (click)="onSubmit()" routerLink="/infoConfirmation">Sign Up</button> 
+  </form>
+</mat-card>

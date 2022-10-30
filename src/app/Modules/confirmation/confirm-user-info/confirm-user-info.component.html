@@ -1,0 +1,27 @@
+
+
+<mat-card class="info-card">
+  <div class="header-container" >
+  <mat-icon class="user-icon">account_circle</mat-icon>
+  
+  <i class="header">Your Personal Information</i>
+ 
+</div>
+<mat-list role="list">
+  <mat-list-item role="listitem"><mat-icon>supervisor_account</mat-icon>User Name : {{dataFromSignUp.userNameFormControl}}</mat-list-item>
+  <mat-list-item role="listitem"><mat-icon>label_important</mat-icon> Full Name : {{dataFromSignUp.fullNameFormControl}}</mat-list-item>
+  <mat-list-item role="listitem"><mat-icon>report_problem</mat-icon> Password : {{dataFromSignUp.passwordFormControl}}</mat-list-item>
+</mat-list>
+
+<mat-list role="list">
+  <mat-list-item role="listitem"><mat-icon>label_important</mat-icon> First Name : {{dataFromUserProfile.firstNameFormControl}}</mat-list-item>
+  <mat-list-item role="listitem"><mat-icon>label_important</mat-icon> Last Name : {{dataFromUserProfile.lastNameFormControl}}</mat-list-item>
+  <mat-list-item role="listitem"><mat-icon>account_balance</mat-icon> Country Of Birth : {{dataFromUserProfile.counryOfBirthFormControl}}</mat-list-item>
+  <mat-list-item role="listitem"><mat-icon>card_giftcard</mat-icon> Age : {{dataFromUserProfile.ageFormControl}}</mat-list-item>
+  <mat-list-item role="listitem"><mat-icon>where_to_vote</mat-icon> Address : {{dataFromUserProfile.addressFormControl}}</mat-list-item>
+  <button type="button" mat-raised-button color="primary" routerLink="/usersList" >Next</button>
+</mat-list>
+</mat-card>
+      
+   
+ 

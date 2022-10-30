@@ -1,0 +1,18 @@
+<table>
+    <tr>
+      <th>User Name</th>
+      <th>First Name</th>
+      <th>Age</th>
+      <th>Remove</th>
+    </tr>
+    <tr *ngFor="let user of allUsers; let i = index">
+        <ng-container *ngIf="allUsers[i].userName!=undefined;">
+      <td>{{user.basic.userNameFormControl}}</td>
+      <td>{{user.advanced.firstNameFormControl}}</td>
+      <td>{{user.advanced.ageFormControl}}</td>
+      <td><button type="button" mat-raised-button color="warn" (click)="removeUser(user.basic.userNameFormControl)" >remove</button></td>
+    </ng-container>
+    </tr>
+  </table>
+
+  

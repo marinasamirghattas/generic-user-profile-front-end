@@ -1,0 +1,45 @@
+
+<mat-card class="sign-up-card">
+<form class="example-form"  [formGroup]="signUpForm">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>User Name</mat-label>
+    <input type="text" matInput formControlName="userNameFormControl" [errorStateMatcher]="matcher"
+           placeholder="marinaghattas">
+     <mat-error *ngIf="signUpForm.controls['userNameFormControl'].hasError('minlength') && !signUpForm.controls['userNameFormControl'].hasError('required')">
+      User Name Must be at least 8 characters
+    </mat-error>
+    <mat-error *ngIf="signUpForm.controls['userNameFormControl'].hasError('required')">
+      User Name is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="signUpForm.controls['userNameFormControl'].hasError('pattern')&& !signUpForm.controls['userNameFormControl'].hasError('required')">
+      User Name must be small letters only
+    </mat-error>
+  </mat-form-field>
+  
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Full Name</mat-label>
+    <input type="text" matInput formControlName="fullNameFormControl" [errorStateMatcher]="matcher"
+           placeholder="MarinaSamirGhattas">
+    <mat-error *ngIf="signUpForm.controls['fullNameFormControl'].hasError('required')">
+      Full Name is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="signUpForm.controls['fullNameFormControl'].hasError('pattern')&& !signUpForm.controls['fullNameFormControl'].hasError('required')">
+      Full Name must be letters only
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>PassWord</mat-label>
+    <input type="password" matInput formControlName="passwordFormControl" [errorStateMatcher]="matcher"
+           placeholder="********">
+    <mat-error *ngIf="signUpForm.controls['passwordFormControl'].hasError('required')">
+      PassWord is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="signUpForm.controls['passwordFormControl'].hasError('pattern')&& !signUpForm.controls['passwordFormControl'].hasError('required')">
+      password must bs min length 8 chars, atleast 1 capital letter,1 small letter, number, special charcters
+    </mat-error>
+  </mat-form-field>
+  <button type="button" mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!signUpForm.valid" routerLink="/userProfile" >Sign Up</button>
+</form>
+</mat-card>
+

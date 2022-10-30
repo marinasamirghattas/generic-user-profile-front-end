@@ -1,0 +1,43 @@
+mat-list-item{
+    border: 1px rgb(196, 196, 254) solid;
+    margin:25px auto;
+    max-width: 90%;
+    min-width: 50%;
+    box-shadow: 3px 3px 1px 3px #d8d7d7;
+}
+
+.user-icon {
+   
+    transform: scale(3);
+    margin: 50px 0 50px 50px;
+   
+}
+.header{
+    font-size: 30px;
+    margin-top: 50px;
+    margin-left: 20px;
+    line-height: 30px;
+    
+}
+.header-container{
+    display: flex;
+    flex-direction: row;
+    
+}
+*{
+    color:rgb(15, 15, 94)
+}
+.info-card{
+    margin-top:25px;
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    background:#ffffff;
+    
+  }
+  .mat-raised-button{
+    margin:35px auto;
+    display: block;
+    padding:7px 25px;
+    font-size: large;
+    }

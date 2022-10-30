@@ -1,0 +1,29 @@
+
+.sign-up-card{
+  width: 45%;
+  height: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  background:#ffffff;
+  
+}
+.example-form {
+    padding-top: 10%;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .mat-raised-button{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding:7px 12px;
+  font-size: large;
+  }
